@@ -17,3 +17,13 @@ jobs:
 
       - name: Show Current Azure Account
         run: az account show --output table
+
+      # - name: 'Set up Java'
+      #   uses: actions/setup-java@v3
+      #   with:
+      #     distribution: 'temurin'
+      #     java-version: '21'
+
+      - name: Deploy
+        run: |
+           mvn clean package azure-functions:deploy

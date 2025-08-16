@@ -16,7 +16,7 @@ public class Function {
         context.getLogger().info("Java HTTP trigger processed a request.");
 
         return request.createResponseBuilder(HttpStatus.OK)
-                .body("Hello from Azure Functions!")
+                .body("Hello from Azure Functions! with version1")
                 .build();
     }
 }
