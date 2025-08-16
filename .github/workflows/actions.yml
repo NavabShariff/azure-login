@@ -27,14 +27,12 @@ jobs:
         with:
           maven-version: '3.6.3'
 
-      - name: Verify Azure Authentication
+      - name: Azure login
         run: |
           az login --identity
           az account show --output table
 
-      - name: Show Current Azure Account
-        run: az account show --output table
-
       - name: Deploy
         run: |
-           mvn clean package azure-functions:deploy
+          mvn clean package
+          mvn azure-functions:deploy -Dazure.functions.allowAppServiceAuthentication=true
