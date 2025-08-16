@@ -10,6 +10,8 @@ jobs:
   azure-login:
     runs-on: self-hosted
     steps:
+      - uses: actions/checkout@v4
+
       - name: Azure Login
         uses: azure/login@v2
         with:
@@ -30,8 +32,8 @@ jobs:
 
       - name: Test
         run: |
-           mvn --version
+           ls -lh
 
       - name: Deploy
         run: |
-           mvn clean package
+           mvn clean package 
