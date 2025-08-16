@@ -26,12 +26,12 @@ jobs:
 
       - uses: stCarolas/setup-maven@v4
         with:
-          maven-version: '3.9.6'
-          
+          maven-version: '3.6.3'
+
       - name: Test
         run: |
            mvn --version
 
       - name: Deploy
         run: |
-           mvn clean package azure-functions:deploy
+           mvn clean package
