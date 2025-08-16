@@ -24,6 +24,10 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - uses: stCarolas/setup-maven@v4
+        with:
+          maven-version: '3.9.6'
+          
       - name: Test
         run: |
            mvn --version
