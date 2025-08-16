@@ -30,11 +30,11 @@ jobs:
       - name: Verify Azure Authentication
         run: |
           az login --identity
-          az account show --output tabl
+          az account show --output table
 
       - name: Show Current Azure Account
         run: az account show --output table
-        
+
       - name: Deploy
         run: |
            mvn clean package azure-functions:deploy
